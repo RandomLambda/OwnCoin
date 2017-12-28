@@ -1,5 +1,3 @@
-This is the reference code for [CryptoNote](https://cryptonote.org) cryptocurrency protocol.
-
 * Launch your own CryptoNote currency: [CryptoNote Starter](https://cryptonotestarter.org/)
 * CryptoNote reference implementation: [CryptoNoteCoin](https://cryptonote-coin.org)
 * Discussion board and support: [CryptoNote Forum](https://forum.cryptonote.org)
@@ -8,11 +6,7 @@ This is the reference code for [CryptoNote](https://cryptonote.org) cryptocurren
 
 ### Preparation
 
-1. Create an account on [GitHub.com](github.com)
-2. Fork [CryptoNote repository](https://github.com/cryptonotefoundation/cryptonote)
 3. Buy one or two Ubuntu-based dedicated servers (at least 2Gb of RAM) for seed nodes.
-
-
 
 ### First step. Give a name to your coin
 
@@ -46,34 +40,6 @@ Total amount of coins to be emitted. Most of CryptoNote based coins use `(uint64
 Example:
 ```
 const uint64_t MONEY_SUPPLY = (uint64_t)(-1);
-```
-
-**2. Emission curve** (src/CryptoNoteConfig.h)
-
-Be default CryptoNote provides emission formula with slight decrease of block reward with each block. This is different from Bitcoin where block reward halves every 4 years.
-
-`EMISSION_SPEED_FACTOR` constant defines emission curve slope. This parameter is required to calulate block reward. 
-
-Example:
-```
-const unsigned EMISSION_SPEED_FACTOR = 18;
-```
-
-**3. Difficulty target** (src/CryptoNoteConfig.h)
-
-Difficulty target is an ideal time period between blocks. In case an average time between blocks becomes less than difficulty target, the difficulty increases. Difficulty target is measured in seconds.
-
-Difficulty target directly influences several aspects of coin's behavior:
-
-- transaction confirmation speed: the longer the time between the blocks is, the slower transaction confirmation is
-- emission speed: the longer the time between the blocks is the slower the emission process is
-- orphan rate: chains with very fast blocks have greater orphan rate
-
-For most coins difficulty target is 60 or 120 seconds.
-
-Example:
-```
-const uint64_t DIFFICULTY_TARGET = 120;
 ```
 
 **4. Block reward formula**
