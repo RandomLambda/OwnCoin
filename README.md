@@ -32,25 +32,6 @@ In case you are not satisfied with CryptoNote default implementation of block re
 bool Currency::getBlockReward(size_t medianSize, size_t currentBlockSize, uint64_t alreadyGeneratedCoins, uint64_t fee, uint64_t& reward, int64_t& emissionChange) const
 ```
 
-### Third step. Networking
-
-**1. Default ports for P2P and RPC networking** (src/CryptoNoteConfig.h)
-
-P2P port is used by daemons to talk to each other through P2P protocol.
-RPC port is used by wallet and other programs to talk to daemon.
-
-It's better to choose ports that aren't used by other software or coins. See known TCP ports lists:
-
-* http://www.speedguide.net/ports.php
-* http://www.networksorcery.com/enp/protocol/ip/ports00000.htm
-* http://keir.net/portlist.html
-
-Example:
-```
-const int P2P_DEFAULT_PORT = 17236;
-const int RPC_DEFAULT_PORT = 18236;
-```
-
 **3. Seed nodes** (src/CryptoNoteConfig.h)
 
 Add IP addresses of your seed nodes.
