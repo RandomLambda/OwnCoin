@@ -32,28 +32,11 @@ In case you are not satisfied with CryptoNote default implementation of block re
 bool Currency::getBlockReward(size_t medianSize, size_t currentBlockSize, uint64_t alreadyGeneratedCoins, uint64_t fee, uint64_t& reward, int64_t& emissionChange) const
 ```
 
-**3. Seed nodes** (src/CryptoNoteConfig.h)
-
-Add IP addresses of your seed nodes.
-
-Example:
-```
-const std::initializer_list<const char*> SEED_NODES = {
-  "111.11.11.11:17236",
-  "222.22.22.22:17236",
-};
-```
-
 ### Sixth step. Genesis block
 
 **1. Build the binaries with blank genesis tx hex** (src/CryptoNoteConfig.h)
 
 You should leave `const char GENESIS_COINBASE_TX_HEX[]` blank and compile the binaries without it.
-
-Example:
-```
-const char GENESIS_COINBASE_TX_HEX[] = "";
-```
 
 
 **2. Start the daemon to print out the genesis block**
